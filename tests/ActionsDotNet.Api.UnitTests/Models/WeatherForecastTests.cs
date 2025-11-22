@@ -9,6 +9,6 @@ public class WeatherForecastTests
     {
         var weatherForecast = new WeatherForecast { TemperatureC = 0 };
 
-        Assert.Equal(31, weatherForecast.TemperatureF);
+        Assert.Equal(32, weatherForecast.TemperatureF);
     }
 }
