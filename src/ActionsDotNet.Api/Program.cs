@@ -24,21 +24,25 @@ public class Program
             "Balmy",
             "Hot",
             "Sweltering",
-            "Scorching"
+            "Scorching",
         };
 
-        app.MapGet("/weatherforecast", (HttpContext httpContext) =>
-        {
-            var forecast = Enumerable.Range(1, 5).Select(index =>
-                new WeatherForecast
-                {
-                    Date = DateOnly.FromDateTime(DateTime.Now.AddDays(index)),
-                    TemperatureC = Random.Shared.Next(-20, 55),
-                    Summary = summaries[Random.Shared.Next(summaries.Length)]
-                })
-                .ToArray();
-            return forecast;
-        });
+        app.MapGet(
+            "/weatherforecast",
+            (HttpContext httpContext) =>
+            {
+                var forecast = Enumerable
+                    .Range(1, 5)
+                    .Select(index => new WeatherForecast
+                    {
+                        Date = DateOnly.FromDateTime(DateTime.Now.AddDays(index)),
+                        TemperatureC = Random.Shared.Next(-20, 55),
+                        Summary = summaries[Random.Shared.Next(summaries.Length)],
+                    })
+                    .ToArray();
+                return forecast;
+            }
+        );
 
         app.Run();
     }

@@ -7,10 +7,7 @@ public class WeatherForecastTests
     [Fact]
     public void TemperatureFShouldReturnCorrectValueBasedOnTemperatureC()
     {
-        var weatherForecast = new WeatherForecast
-        {
-            TemperatureC = 0
-        };
+        var weatherForecast = new WeatherForecast { TemperatureC = 0 };
 
         Assert.Equal(32, weatherForecast.TemperatureF);
     }
