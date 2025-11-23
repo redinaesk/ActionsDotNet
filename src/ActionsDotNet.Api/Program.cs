@@ -13,6 +13,8 @@ public class Program
 
         app.UseAuthorization();
 
+        app.MapGet("/", () => TypedResults.Ok("Hello from /"));
+
         var summaries = new[]
         {
             "Freezing",
