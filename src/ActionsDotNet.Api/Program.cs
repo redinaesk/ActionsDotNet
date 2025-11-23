@@ -44,6 +44,8 @@ public class Program
             }
         );
 
+        app.MapGet("/lorem", () => TypedResults.Ok("lorem"));
+
         app.Run();
     }
 }
